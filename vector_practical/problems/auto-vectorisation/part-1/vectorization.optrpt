@@ -29,63 +29,39 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1/2=50.0%] vectorization.cpp(21,12)
-  -> EXTERN: (24,23) malloc(size_t)
-  -> EXTERN: (25,23) malloc(size_t)
-  -> EXTERN: (26,23) malloc(size_t)
-  -> (32,3) vadd(float *, float *, float *, int) (isz = 19) (sz = 30)
+  -> EXTERN: (27,23) _mm_malloc(unsigned long long, unsigned long long)
+  -> EXTERN: (28,23) _mm_malloc(unsigned long long, unsigned long long)
+  -> EXTERN: (29,23) _mm_malloc(unsigned long long, unsigned long long)
+  -> (35,3) vadd(float *, float *, float *, int) (isz = 19) (sz = 30)
      [[ Called routine is noinline  <1>]]
-  -> EXTERN: (36,5) printf(const char *, ...)
-  -> EXTERN: (38,3) free(void *)
-  -> EXTERN: (39,3) free(void *)
-  -> EXTERN: (40,3) free(void *)
+  -> EXTERN: (39,5) printf(const char *, ...)
+  -> EXTERN: (41,3) free(void *)
+  -> EXTERN: (42,3) free(void *)
+  -> EXTERN: (43,3) free(void *)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at vectorization.cpp(29,3)
-<Peeled loop for vectorization>
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(29,3)
-   remark #15388: vectorization support: reference B has aligned access   [ vectorization.cpp(30,10) ]
-   remark #15388: vectorization support: reference A has aligned access   [ vectorization.cpp(30,5) ]
+LOOP BEGIN at vectorization.cpp(32,3)
+   remark #15388: vectorization support: reference B has aligned access   [ vectorization.cpp(33,10) ]
+   remark #15388: vectorization support: reference A has aligned access   [ vectorization.cpp(33,5) ]
    remark #15305: vectorization support: vector length 4
    remark #15399: vectorization support: unroll factor set to 4
-   remark #15309: vectorization support: normalized vectorization overhead 0.425
+   remark #15309: vectorization support: normalized vectorization overhead 0.075
    remark #15300: LOOP WAS VECTORIZED
-   remark #15442: entire loop may be executed in remainder
    remark #15449: unmasked aligned unit stride stores: 2 
    remark #15475: --- begin vector loop cost summary ---
    remark #15476: scalar loop cost: 12 
    remark #15477: vector loop cost: 2.500 
-   remark #15478: estimated potential speedup: 4.240 
+   remark #15478: estimated potential speedup: 4.780 
    remark #15487: type converts: 1 
    remark #15488: --- end vector loop cost summary ---
    remark #25015: Estimate of max trip count of loop=32
 LOOP END
 
-LOOP BEGIN at vectorization.cpp(29,3)
-<Alternate Alignment Vectorized Loop>
-   remark #25015: Estimate of max trip count of loop=32
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(29,3)
-<Remainder loop for vectorization>
-   remark #15389: vectorization support: reference B has unaligned access   [ vectorization.cpp(30,10) ]
-   remark #15388: vectorization support: reference A has aligned access   [ vectorization.cpp(30,5) ]
-   remark #15381: vectorization support: unaligned access used inside loop body
-   remark #15305: vectorization support: vector length 4
-   remark #15309: vectorization support: normalized vectorization overhead 1.000
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(29,3)
-<Remainder loop for vectorization>
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(35,3)
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ vectorization.cpp(36,5) ]
+LOOP BEGIN at vectorization.cpp(38,3)
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ vectorization.cpp(39,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 ===========================================================================
