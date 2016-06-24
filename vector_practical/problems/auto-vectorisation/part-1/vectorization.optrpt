@@ -101,12 +101,10 @@ INLINE REPORT: (vadd(float *, float *, float *, int)) [2/2=100.0%] vectorization
 
 
 LOOP BEGIN at vectorization.cpp(15,5)
-<Peeled loop for vectorization, Multiversioned v1>
+<Peeled loop for vectorization>
 LOOP END
 
 LOOP BEGIN at vectorization.cpp(15,5)
-<Multiversioned v1>
-   remark #25228: Loop multiversioned for Data Dependence
    remark #15388: vectorization support: reference C has aligned access   [ vectorization.cpp(17,9) ]
    remark #15389: vectorization support: reference A has unaligned access   [ vectorization.cpp(17,9) ]
    remark #15388: vectorization support: reference B has aligned access   [ vectorization.cpp(17,9) ]
@@ -127,11 +125,11 @@ LOOP BEGIN at vectorization.cpp(15,5)
 LOOP END
 
 LOOP BEGIN at vectorization.cpp(15,5)
-<Alternate Alignment Vectorized Loop, Multiversioned v1>
+<Alternate Alignment Vectorized Loop>
 LOOP END
 
 LOOP BEGIN at vectorization.cpp(15,5)
-<Remainder loop for vectorization, Multiversioned v1>
+<Remainder loop for vectorization>
    remark #15388: vectorization support: reference C has aligned access   [ vectorization.cpp(17,9) ]
    remark #15389: vectorization support: reference A has unaligned access   [ vectorization.cpp(17,9) ]
    remark #15389: vectorization support: reference B has unaligned access   [ vectorization.cpp(17,9) ]
@@ -142,17 +140,7 @@ LOOP BEGIN at vectorization.cpp(15,5)
 LOOP END
 
 LOOP BEGIN at vectorization.cpp(15,5)
-<Remainder loop for vectorization, Multiversioned v1>
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(15,5)
-<Multiversioned v2>
-   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
-   remark #25439: unrolled with remainder by 2  
-LOOP END
-
-LOOP BEGIN at vectorization.cpp(15,5)
-<Remainder, Multiversioned v2>
+<Remainder loop for vectorization>
 LOOP END
 ===========================================================================
 
