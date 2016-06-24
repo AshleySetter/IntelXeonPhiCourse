@@ -12,9 +12,12 @@ Contact information can be found at http://colfax-intl.com/     */
 
 int CountNonZero(const int N, const int* arr){
 	int nz=0;
+#pragma offload target(mic) in(arr: length(N)), inout(nz)
+#pragma omp parallel for default(none) shared(arr) private(i) reduction( + : nz ) 
 	for ( int i = 0 ; i < N ; i++ ){
 		if ( arr[i] != 0 ) nz++;
 	}
+
 	return nz;
 }
 

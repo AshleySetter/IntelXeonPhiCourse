@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
 	start_time = my_wtime();
 
 	step = 1.0 / (double)num_steps;
+#pragma offload target(mic) in(step, x), inout(sum), nocopy(i)
 	#pragma omp parallel for private(x) reduction(+:sum)
 	for (i=0; i<num_steps; i++)
 	{
